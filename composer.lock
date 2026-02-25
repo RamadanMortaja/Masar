@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb6d4ccae1177187c917ca4da413e71e",
+    "content-hash": "6739e857e4fb5f417d96724e0f771075",
     "packages": [
         {
             "name": "brick/math",
@@ -2786,19 +2786,12 @@
         {
             "name": "nativephp/php-bin",
             "version": "1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/NativePHP/php-bin.git",
-                "reference": "6b5e11cd56f5214f37d4c175afb752b210545f59"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/NativePHP/php-bin/zipball/6b5e11cd56f5214f37d4c175afb752b210545f59",
-                "reference": "6b5e11cd56f5214f37d4c175afb752b210545f59",
-                "shasum": ""
+                "type": "path",
+                "url": "C:/xampp/htdocs/AbuFawzi/packages/php-bin",
+                "reference": "06becd577d256a70a452b7314f77f6cb6a884887"
             },
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0",
                 "GPL-3.0-or-later",
@@ -2823,20 +2816,20 @@
                 "nativephp",
                 "php"
             ],
-            "support": {
-                "source": "https://github.com/NativePHP/php-bin/tree/1.1.1"
-            },
             "funding": [
                 {
-                    "url": "https://github.com/sponsors/simonhamp",
-                    "type": "github"
+                    "type": "github",
+                    "url": "https://github.com/sponsors/simonhamp"
                 },
                 {
-                    "url": "https://opencollective.com/nativephp",
-                    "type": "opencollective"
+                    "type": "opencollective",
+                    "url": "https://opencollective.com/nativephp"
                 }
             ],
-            "time": "2025-09-02T19:18:24+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": false
+            }
         },
         {
             "name": "nesbot/carbon",
