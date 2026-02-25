@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" id="Layer_1" x="0px" y="0px" viewBox="0 0 544.04102 480.698" height="500" width="563.32904">
+<title>امامك طریق ذو اتجاھین - gpsarab.com</title>
+<g id="g3" transform="translate(-11.44225,-78)">
+	<defs id="defs5">
+		<polyline id="SVGID_1_" points="11.44,78 11.44,558.698 555.489,558.698 555.489,78   "/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_" overflow="visible" id="use9" style="overflow:visible" x="0" y="0" width="566.92999" height="566.92999"/>
+	</clipPath>
+	<polyline clip-path="url(#SVGID_2_)" clip-rule="evenodd" points="131.653,529.994    33.502,529.994 277.719,106.405 523.192,529.994 131.653,529.994  " id="polyline11" style="fill:#ffffff;fill-rule:evenodd"/>
+	<path clip-path="url(#SVGID_2_)" clip-rule="evenodd" d="m 519.552,558.698 c 12.783,-0.184 24.709,-7.021 31.138,-18.002 6.391,-11.182 6.391,-24.913 0,-36.191 L 314.637,96.07 C 308.209,84.89 296.283,78 283.385,78 270.53,78 258.655,84.84 252.213,95.971 L 16.261,504.505 c -6.425,11.13 -6.425,24.877 0,36.007 6.41,11.313 18.317,18.187 31.286,18.187 H 519.552 M 68.317,510.6 H 498.614 L 283.531,138.154 68.317,510.6 z" id="path13" style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd"/>
+</g>
+<polyline clip-rule="evenodd" points="220.47,494.583 260.468,454.569 260.468,414.602   220.47,454.569 180.469,414.602 180.469,454.569 220.47,494.583 " id="polyline15" style="fill:#000000;fill-rule:evenodd" transform="translate(-11.44225,-78)"/>
+<rect x="195.74475" y="220.43201" width="26.715" height="160.09599" id="rect17" style="fill:#000000"/>
+<polyline clip-rule="evenodd" points="318.154,258.284 358.302,298.416 358.302,338.432   318.154,298.416 278.157,338.432 278.157,298.416 318.154,258.284 " id="polyline19" style="fill:#000000;fill-rule:evenodd" transform="translate(-11.44225,-78)"/>
+<rect x="293.44574" y="216.45599" width="26.715" height="160.11301" id="rect21" style="fill:#000000"/>
+</svg>
