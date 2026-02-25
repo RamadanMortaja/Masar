@@ -17,15 +17,6 @@
         "nativephp/desktop": "^2.1",
         "nativephp/php-bin": "1.1.1"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "C:/xampp/htdocs/AbuFawzi/packages/php-bin",
-            "options": {
-                "symlink": false
-            }
-        }
-    ],
     "require-dev": {
         "fakerphp/faker": "^1.23",
         "laravel/pail": "^1.2.2",
