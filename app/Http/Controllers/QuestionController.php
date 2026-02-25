@@ -47,7 +47,7 @@ class QuestionController extends Controller
         $questions = $query->latest()->paginate(20);
 
         // إحصائية لأصعب سؤال (افتراضية - يمكن ربطها لاحقاً بسجل إجابات الطلاب)
-        $hardestQuestion = Question::whereNotNull('question_explanation')->first()->questiontext ?? 'لا يوجد بيانات'; 
+        $hardestQuestion = Question::whereNotNull('question_explanation')->first()->question_text ?? 'لا يوجد بيانات';
 
         return view('admin.questions.index', compact('questions', 'hardestQuestion'));
     }
@@ -130,8 +130,8 @@ class QuestionController extends Controller
     public function destroy($id) 
     {
         $question = Question::findOrFail($id);
-        if ($question->questionquestionpicture) {
-            Storage::disk('public')->delete($question->questionquestionpicture);
+        if ($question->question_picture) {
+            Storage::disk('public')->delete($question->question_picture);
         }
         $question->delete();
         return redirect()->back()->with('success', 'تم حذف السؤال.');
