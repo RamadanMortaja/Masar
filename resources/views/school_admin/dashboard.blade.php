@@ -37,23 +37,23 @@
     .stat-card .card-val {
         font-size: 2rem;
         font-weight: 800;
-        color: #0f172a;
+        color: var(--text-1);
         line-height: 1;
         margin-bottom: 4px;
     }
     .stat-card .card-label { font-size: .8rem; color: var(--text-muted); font-weight: 500; }
     .stat-card .card-sub   { font-size: .75rem; margin-top: 8px; font-weight: 600; }
 
-    .stat-card.blue  .card-icon { background: #eff6ff; color: #3b82f6; }
-    .stat-card.green .card-icon { background: #ecfdf5; color: #10b981; }
-    .stat-card.amber .card-icon { background: #fffbeb; color: #f59e0b; }
-    .stat-card.red   .card-icon { background: #fef2f2; color: #ef4444; }
+    .stat-card.blue  .card-icon { background: rgba(59,130,246,.12); color: #3b82f6; }
+    .stat-card.green .card-icon { background: rgba(16,185,129,.12); color: #10b981; }
+    .stat-card.amber .card-icon { background: rgba(245,158,11,.12); color: #f59e0b; }
+    .stat-card.red   .card-icon { background: rgba(239,68,68,.12); color: #ef4444; }
 
     /* Quota bar */
     .quota-bar {
         height: 6px;
         border-radius: 6px;
-        background: #f1f5f9;
+        background: var(--bg);
         overflow: hidden;
         margin-top: 10px;
     }
@@ -137,16 +137,16 @@
         border-bottom: 1px solid var(--border);
         display: flex; align-items: center; justify-content: space-between;
     }
-    .table-card-header .title { font-size: .95rem; font-weight: 700; color: #1e293b; }
+    .table-card-header .title { font-size: .95rem; font-weight: 700; color: var(--text-1); }
     .table-card-header .sub   { font-size: .75rem; color: var(--text-muted); margin-top: 2px; }
 
     .t-table { width: 100%; border-collapse: collapse; }
     .t-table thead th {
-        background: #f8fafc;
+        background: rgba(255,255,255,.03);
         padding: 12px 18px;
         font-size: .75rem;
         font-weight: 700;
-        color: #64748b;
+        color: var(--text-muted);
         text-transform: uppercase;
         letter-spacing: .05em;
         border-bottom: 1px solid var(--border);
@@ -155,12 +155,12 @@
     .t-table tbody td {
         padding: 14px 18px;
         font-size: .85rem;
-        color: #334155;
-        border-bottom: 1px solid #f8fafc;
+        color: var(--text-2);
+        border-bottom: 1px solid var(--border);
         vertical-align: middle;
     }
     .t-table tbody tr:last-child td { border-bottom: none; }
-    .t-table tbody tr:hover td { background: #f8fafc; }
+    .t-table tbody tr:hover td { background: rgba(255,255,255,.05); }
 
     /* Student avatar */
     .s-avatar {
@@ -171,7 +171,7 @@
         font-weight: 700; font-size: .85rem;
         margin-left: 10px;
     }
-    .s-name { font-weight: 600; color: #0f172a; }
+    .s-name { font-weight: 600; color: var(--text-1); }
     .s-id   { font-size: .72rem; color: var(--text-muted); font-family: monospace; }
 
     /* Badges */
@@ -217,7 +217,7 @@
         transition: all .2s;
     }
     .action-btn:hover .a-icon { transform: scale(1.1); }
-    .action-btn .a-label { font-size: .78rem; font-weight: 700; color: #334155; }
+    .action-btn .a-label { font-size: .78rem; font-weight: 700; color: var(--text-1); }
 
     /* 2-col layout */
     .two-col { display: grid; grid-template-columns: 1fr 340px; gap: 20px; margin-top: 20px; }
@@ -229,7 +229,7 @@
     .activity-item {
         display: flex; gap: 12px; align-items: flex-start;
         padding: 12px 0;
-        border-bottom: 1px solid #f1f5f9;
+        border-bottom: 1px solid var(--border);
     }
     .activity-item:last-child { border-bottom: none; }
     .a-dot {
@@ -237,10 +237,10 @@
         display: flex; align-items: center; justify-content: center;
         font-size: .8rem; flex-shrink: 0; margin-top: 2px;
     }
-    .a-dot.blue  { background: #eff6ff; color: #3b82f6; }
-    .a-dot.green { background: #ecfdf5; color: #10b981; }
-    .a-dot.amber { background: #fffbeb; color: #f59e0b; }
-    .a-text   { font-size: .82rem; font-weight: 600; color: #1e293b; }
+    .a-dot.blue  { background: rgba(59,130,246,.12); color: #3b82f6; }
+    .a-dot.green { background: rgba(16,185,129,.12); color: #10b981; }
+    .a-dot.amber { background: rgba(245,158,11,.12); color: #f59e0b; }
+    .a-text   { font-size: .82rem; font-weight: 600; color: var(--text-1); }
     .a-time   { font-size: .72rem; color: var(--text-muted); margin-top: 2px; }
 
     /* Animate on load */
@@ -478,7 +478,7 @@
                 <span style="font-size:1.4rem;font-weight:800;color:{{ $quota>90?'#ef4444':'#3b82f6' }};">{{ $quota }}%</span>
             </div>
             <div style="padding:16px 22px 20px;">
-                <div style="height:10px;background:#f1f5f9;border-radius:10px;overflow:hidden;">
+                <div style="height:10px;background:var(--bg);border-radius:10px;overflow:hidden;">
                     <div style="height:100%;width:{{ min($quota,100) }}%;border-radius:10px;
                         background:{{ $quota>90 ? 'linear-gradient(90deg,#ef4444,#dc2626)' : ($quota>70 ? 'linear-gradient(90deg,#f59e0b,#d97706)' : 'linear-gradient(90deg,#3b82f6,#2563eb)') }};
                         transition:width 1s ease;">
@@ -499,7 +499,7 @@
                 <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
                     @foreach($byStatus as [$label, $count, $color])
                     <div style="display:flex;align-items:center;justify-content:space-between;font-size:.78rem;">
-                        <span style="display:flex;align-items:center;gap:6px;color:#334155;font-weight:600;">
+                        <span style="display:flex;align-items:center;gap:6px;color:var(--text-1);font-weight:600;">
                             <span style="width:8px;height:8px;border-radius:50%;background:{{ $color }};display:inline-block;"></span>
                             {{ $label }}
                         </span>

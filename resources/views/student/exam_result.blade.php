@@ -17,7 +17,7 @@
             <div id="result-message" style="font-size:13px;color:var(--text-3);margin-bottom:24px;"></div>
 
             {{-- الدرجة --}}
-            <div style="background:var(--surface2);border:1px solid var(--border);border-radius:18px;padding:20px;margin-bottom:20px;">
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:18px;padding:20px;margin-bottom:20px;">
                 <div style="font-size:11px;color:var(--text-3);margin-bottom:6px;">نتيجتك النهائية</div>
                 <div id="score-display" style="font-size:52px;font-weight:900;line-height:1;"></div>
                 <div style="font-size:13px;color:var(--text-3);margin-top:4px;">من 30 سؤالاً</div>
@@ -49,7 +49,7 @@
                     <i class="fas fa-redo"></i> إعادة الامتحان
                 </a>
                 <a href="{{ route('student.dashboard') }}"
-                   style="display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;background:var(--surface2);color:var(--text-2);border:1px solid var(--border);border-radius:var(--r-sm);font-size:13px;font-weight:700;text-decoration:none;transition:var(--tr);">
+                   style="display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;background:var(--bg);color:var(--text-2);border:1px solid var(--border);border-radius:var(--r-sm);font-size:13px;font-weight:700;text-decoration:none;transition:var(--tr);">
                     <i class="fas fa-home fa-sm"></i> العودة للرئيسية
                 </a>
             </div>
@@ -61,6 +61,15 @@
 <style>
     @keyframes cardIn { from{opacity:0;transform:scale(.92) translateY(20px)} to{opacity:1;transform:none} }
     @keyframes iconBounce { 0%{transform:scale(0) rotate(-30deg);opacity:0} 70%{transform:scale(1.15)} 100%{transform:scale(1);opacity:1} }
+
+    @media print {
+        body { background: #fff !important; color: #000 !important; margin: 0; padding: 0; }
+        .bottom-nav, a, button { display: none !important; }
+        #result-card { border: 2px solid #000 !important; box-shadow: none !important; border-radius: 0 !important; padding: 50px !important; max-width: 100% !important; }
+        #result-status { font-size: 32px !important; }
+        #score-display { color: #000 !important; }
+        .s-progress-wrap { display: none !important; }
+    }
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>

@@ -52,6 +52,7 @@
             --sh:          0 2px 16px rgba(79, 110, 247, 0.07);
             --sh-md:       0 6px 28px rgba(79, 110, 247, 0.12);
             --tr:          all 0.22s cubic-bezier(.4,0,.2,1);
+            --input-bg:    #ffffff;
         }
 
         body.dark-mode {
@@ -64,6 +65,7 @@
             --text-3:   #64748b;
             --sh:        0 2px 16px rgba(0,0,0,.4);
             --sh-md:     0 6px 28px rgba(0,0,0,.5);
+            --input-bg:  rgba(255,255,255,.05);
         }
 
         * { box-sizing: border-box; }
@@ -190,6 +192,10 @@
 
         .xs { font-size: 11px; }
         .tap:active { transform: scale(.97); }
+
+        /* Ensure ALL modals are scrollable */
+        .modal-dialog .modal-content { max-height: 90vh; display: flex; flex-direction: column; overflow: hidden; }
+        .modal-dialog .modal-body { overflow-y: auto; flex: 1; }
     </style>
 </head>
 <body>

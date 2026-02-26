@@ -20,16 +20,19 @@
             --success: #10b981;
             --warning: #f59e0b;
             --danger: #ef4444;
+            --text-1: #1e293b;
+            --text-2: #475569;
             --text-muted: #94a3b8;
             --bg: #f0f4f9;
             --card-bg: #ffffff;
             --border: rgba(0,0,0,.06);
+            --input-bg: #ffffff;
+            --topbar-bg: #ffffff;
         }
 
         /* Ensure ALL modals are scrollable */
         .modal-dialog .modal-content { max-height: 90vh; display: flex; flex-direction: column; overflow: hidden; }
         .modal-dialog .modal-body { overflow-y: auto; flex: 1; }
-        .modal-dialog-scrollable .modal-body { overflow-y: auto; }
         .page-link svg { width: 12px !important; height: 12px !important; font-size: .75rem !important; }
 
         /* ── DARK MODE ── */
@@ -37,29 +40,33 @@
             --bg: #0b1220;
             --card-bg: #1a2332;
             --border: rgba(255,255,255,.07);
-            --text-muted: #94a3b8;
-            color: #f1f5f9;
+            --text-1: #f1f5f9;
+            --text-2: #94a3b8;
+            --text-muted: #64748b;
+            --input-bg: rgba(255,255,255,.04);
+            --topbar-bg: #111827;
+            color: var(--text-1);
         }
         body.dark-mode .content-area,
-        body.dark-mode #mainLayout { background: #0b1220 !important; }
-        body.dark-mode .topbar { background: #111827 !important; border-bottom-color: rgba(255,255,255,.07) !important; }
-        body.dark-mode .page-breadcrumb { background: #0f1d2e !important; border-bottom-color: rgba(255,255,255,.06) !important; }
-        body.dark-mode .card, body.dark-mode .s-card { background: #1a2332 !important; border-color: rgba(255,255,255,.07) !important; color: #f1f5f9; }
-        body.dark-mode table thead th { background: rgba(255,255,255,.03) !important; color: #64748b !important; border-color: rgba(255,255,255,.07) !important; }
-        body.dark-mode table tbody td { color: #94a3b8 !important; border-color: rgba(255,255,255,.07) !important; }
+        body.dark-mode #mainLayout { background: var(--bg) !important; }
+        body.dark-mode .topbar { background: var(--topbar-bg) !important; border-bottom-color: var(--border) !important; }
+        body.dark-mode .page-breadcrumb { background: #0f1d2e !important; border-bottom-color: var(--border) !important; }
+        body.dark-mode .card, body.dark-mode .s-card { background: var(--card-bg) !important; border-color: var(--border) !important; color: var(--text-1); }
+        body.dark-mode table thead th { background: rgba(255,255,255,.03) !important; color: var(--text-muted) !important; border-color: var(--border) !important; }
+        body.dark-mode table tbody td { color: var(--text-2) !important; border-color: var(--border) !important; }
         body.dark-mode table tbody tr:hover td { background: #1f2d40 !important; }
-        body.dark-mode .alert-pro { background: #1a2332; border-color: rgba(255,255,255,.1); }
-        body.dark-mode input, body.dark-mode select, body.dark-mode textarea { background: rgba(255,255,255,.04) !important; border-color: rgba(255,255,255,.12) !important; color: #f1f5f9 !important; }
-        body.dark-mode .filter-bar { background: #1a2332 !important; border-color: rgba(255,255,255,.07) !important; }
-        body.dark-mode .modal-content { background: #1a2332 !important; border-color: rgba(255,255,255,.1) !important; }
-        body.dark-mode .modal-header, body.dark-mode .modal-footer { background: #111827 !important; border-color: rgba(255,255,255,.07) !important; }
-        body.dark-mode .breadcrumb-item.active { color: #94a3b8 !important; }
-        body.dark-mode .user-name { color: #f1f5f9 !important; }
-        body.dark-mode .page-link { background: #1a2332 !important; border-color: rgba(255,255,255,.12) !important; color: #94a3b8 !important; }
+        body.dark-mode .alert-pro { background: var(--card-bg); border-color: rgba(255,255,255,.1); }
+        body.dark-mode input, body.dark-mode select, body.dark-mode textarea { background: var(--input-bg) !important; border-color: rgba(255,255,255,.12) !important; color: var(--text-1) !important; }
+        body.dark-mode .filter-bar { background: var(--card-bg) !important; border-color: var(--border) !important; }
+        body.dark-mode .modal-content { background: var(--card-bg) !important; border-color: rgba(255,255,255,.1) !important; }
+        body.dark-mode .modal-header, body.dark-mode .modal-footer { background: var(--topbar-bg) !important; border-color: var(--border) !important; }
+        body.dark-mode .breadcrumb-item.active { color: var(--text-2) !important; }
+        body.dark-mode .user-name { color: var(--text-1) !important; }
+        body.dark-mode .page-link { background: var(--card-bg) !important; border-color: rgba(255,255,255,.12) !important; color: var(--text-2) !important; }
         body.dark-mode .page-item.active .page-link { background: var(--accent) !important; color: #fff !important; }
-        body.dark-mode .dropdown-menu { background: #1a2332 !important; border-color: rgba(255,255,255,.1) !important; }
-        body.dark-mode .dropdown-item { color: #94a3b8 !important; }
-        body.dark-mode .dropdown-item:hover { background: #1f2d40 !important; color: #f1f5f9 !important; }
+        body.dark-mode .dropdown-menu { background: var(--card-bg) !important; border-color: rgba(255,255,255,.1) !important; }
+        body.dark-mode .dropdown-item { color: var(--text-2) !important; }
+        body.dark-mode .dropdown-item:hover { background: #1f2d40 !important; color: var(--text-1) !important; }
         .page-link svg { width: 12px !important; height: 12px !important; }
 
         * { box-sizing: border-box; }
@@ -324,6 +331,14 @@
             #main { margin-right: 0; }
             .topbar { padding: 12px 16px; }
             .content-area { padding: 16px 16px 40px; }
+        }
+
+        @media print {
+            #sidebar, .topbar, .page-breadcrumb, .sidebar-overlay, .btn-pro, .filter-bar, .act-btn, .tc-foot, .btn-sm-pro, form { display: none !important; }
+            #main { margin-right: 0 !important; }
+            .content-area { padding: 0 !important; }
+            body { background: #fff !important; color: #000 !important; }
+            .card, .s-card, .metric { border: 1px solid #eee !important; box-shadow: none !important; }
         }
     </style>
     @yield('styles')
