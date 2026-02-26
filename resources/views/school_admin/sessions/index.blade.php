@@ -5,24 +5,24 @@
 
 @section('styles')
 <style>
-:root{--accent:#3b82f6;--success:#10b981;--warning:#f59e0b;--danger:#ef4444;--border:rgba(0,0,0,.06);}
+:root{--accent:#3b82f6;--success:#10b981;--warning:#f59e0b;--danger:#ef4444;}
 .pg-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:22px;}
-.pg-title{font-size:1.2rem;font-weight:800;color:#0f172a;}
+.pg-title{font-size:1.2rem;font-weight:800;color:var(--text-1);}
 .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px;}
 @media(max-width:640px){.stats-row{grid-template-columns:1fr;}}
-.sc{background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:flex;align-items:center;gap:14px;}
+.sc{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:flex;align-items:center;gap:14px;}
 .sc-icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
-.sc-val{font-size:1.5rem;font-weight:800;color:#0f172a;line-height:1;}
-.sc-lbl{font-size:.72rem;color:#94a3b8;font-weight:600;margin-top:3px;}
-.filter-bar{background:#fff;border:1px solid var(--border);border-radius:14px;padding:14px 18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px;}
-.filter-bar input,.filter-bar select{padding:8px 12px;border:1px solid #e2e8f0;border-radius:9px;font-family:inherit;font-size:.82rem;color:#334155;background:#f8fafc;outline:none;transition:.2s;}
-.filter-bar input:focus,.filter-bar select:focus{border-color:var(--accent);background:#fff;}
-.t-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;}
-.t-card-head{padding:16px 22px;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between;}
+.sc-val{font-size:1.5rem;font-weight:800;color:var(--text-1);line-height:1;}
+.sc-lbl{font-size:.72rem;color:var(--text-muted);font-weight:600;margin-top:3px;}
+.filter-bar{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:14px 18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px;}
+.filter-bar input,.filter-bar select{padding:8px 12px;border:1px solid var(--border);border-radius:9px;font-family:inherit;font-size:.82rem;color:var(--text-2);background:var(--input-bg);outline:none;transition:.2s;}
+.filter-bar input:focus,.filter-bar select:focus{border-color:var(--accent);background:var(--card-bg);}
+.t-card{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.t-card-head{padding:16px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
 .st{width:100%;border-collapse:collapse;}
-.st thead th{background:#f8fafc;padding:11px 16px;font-size:.72rem;font-weight:700;color:#64748b;text-transform:uppercase;border-bottom:1px solid #f1f5f9;white-space:nowrap;}
-.st tbody td{padding:13px 16px;font-size:.83rem;color:#334155;border-bottom:1px solid #f8fafc;vertical-align:middle;}
-.st tbody tr:hover td{background:#fafbff;}
+.st thead th{background:rgba(255,255,255,.03);padding:11px 16px;font-size:.72rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;border-bottom:1px solid var(--border);white-space:nowrap;}
+.st tbody td{padding:13px 16px;font-size:.83rem;color:var(--text-2);border-bottom:1px solid var(--border);vertical-align:middle;}
+.st tbody tr:hover td{background:rgba(255,255,255,.05);}
 .st tbody tr:last-child td{border-bottom:none;}
 .s-badge{padding:4px 10px;border-radius:20px;font-size:.7rem;font-weight:700;display:inline-flex;align-items:center;gap:4px;}
 .s-scheduled{background:#eff6ff;color:#1d4ed8;}
@@ -39,10 +39,10 @@
 .modal-pro .modal-header{background:linear-gradient(135deg,#0d1b2a,#1e3a5f);color:#fff;border:none;padding:20px 24px;}
 .modal-pro .modal-title{font-weight:700;}
 .modal-pro .modal-body{padding:24px;}
-.modal-pro .modal-footer{border:none;background:#f8fafc;padding:16px 24px;}
+.modal-pro .modal-footer{border:none;background:var(--bg);padding:16px 24px;}
 .fg{margin-bottom:14px;}
-.fg label{display:block;font-size:.75rem;font-weight:700;color:#475569;margin-bottom:5px;}
-.fp{width:100%;padding:9px 12px;border:1px solid #e2e8f0;border-radius:9px;font-family:inherit;font-size:.84rem;color:#1e293b;background:#fff;outline:none;transition:.2s;direction:rtl;}
+.fg label{display:block;font-size:.75rem;font-weight:700;color:var(--text-2);margin-bottom:5px;}
+.fp{width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:9px;font-family:inherit;font-size:.84rem;color:var(--text-1);background:var(--input-bg);outline:none;transition:.2s;direction:rtl;}
 .fp:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(59,130,246,.1);}
 .form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .form-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
@@ -114,8 +114,8 @@
             @endphp
             <tr>
                 <td>
-                    <div style="font-weight:700;color:#0f172a;">{{ \Carbon\Carbon::parse($ses->session_date)->format('Y-m-d') }}</div>
-                    <div style="font-size:.7rem;color:#94a3b8;">{{ \Carbon\Carbon::parse($ses->session_date)->translatedFormat('l') }}</div>
+                    <div style="font-weight:700;color:var(--text-1);">{{ \Carbon\Carbon::parse($ses->session_date)->format('Y-m-d') }}</div>
+                    <div style="font-size:.7rem;color:var(--text-muted);">{{ \Carbon\Carbon::parse($ses->session_date)->translatedFormat('l') }}</div>
                 </td>
                 <td style="font-family:monospace;font-size:.82rem;">
                     {{ substr($ses->start_time,0,5) }}

@@ -658,9 +658,8 @@ body.light-mode #sidebar { box-shadow: 2px 0 20px rgba(0,0,0,.08); }
 @media(max-width:576px) { .form-grid-2,.form-grid-3 { grid-template-columns: 1fr; } }
 
 /* Ensure ALL modals are scrollable */
-.modal-dialog .modal-content { max-height: 90vh; display: flex; flex-direction: column; }
+.modal-dialog .modal-content { max-height: 90vh; display: flex; flex-direction: column; overflow: hidden; }
 .modal-dialog .modal-body { overflow-y: auto; flex: 1; }
-.modal-dialog-scrollable .modal-body { overflow-y: auto; }
 
 /* Pagination override */
 .pagination { gap: 4px; }
